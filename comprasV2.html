@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Otaku sua lojinha anime</title>
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
+    <link rel="stylesheet" type="text/css" href="estilo-teste.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>  
+    <script src="modernizr.js"></script> 
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description+" content="A Sua Loja Otaku/Catálogo"/>
+    <meta name="author" content="Nizshime Scorzello" />
+</head>
+<script lang="javascript" type="text/javascript">
+var tablePrcProd = [0, 85, 60, 60, 1000, 130, 130, 600, 210, 250 ];
+
+function listaPedidosArea(selecionado, table){
+    var produto = selecionado.selectedIndex;
+
+    if(produto != 0 ){
+        var preco = table [produto];
+
+        selecionado.selectedIndex = 0;
+
+        with(selecionado.form){
+            listaPedidos.value += '\n'+ selecionado.options[produto].text+'\n';
+            valor.value = preco + parseInt(valor.value)+",00";
+        }
+    }else{
+        alert("selecione um produto da lista!")
+    }
+}
+
+
+function calculaDV(num)
+{
+var resto = 0, soma = 0;
+for (i = 2; i < 11; i++) {
+ soma = soma + ((num % 10) * i);
+num = parseInt(num / 10);
+}
+resto = (soma % 11);
+return (resto > 1) ? (11 - resto) : 0;
+}
+
+
+function criticaCampoCPF (campo) {
+    var i; 
+    var caracteres; 
+    var cpf;     
+    var identcpf;    
+    var stringCPF = campo.value;
+
+    if (stringCPF.length != 11){
+        alert("CPF tem de ter 11 dígitos!");
+        document.getElementById("idTel").disabled = true;
+        return false;
+    }else{
+        document.getElementById("idTel").disabled = false;
+    }
+    
+    for ( i = 0; i< 11 ; i++){
+    caracteres= stringCPF.charAt(i);
+    if((caracteres < '0') || (caracteres > '9')){
+        alert("CPF só pode conter dígitos, caractere ' " + caracteres + " ' inválido!");
+        document.getElementById("idTel").disabled = true;
+        return false;
+    }else{
+        document.getElementById("idTel").disabled = false;
+    }
+    }
+    
+    identcpf = stringCPF.substring( 0 , 9); 
+    primeiro_digito = calculaDV(identcpf);
+    segundo_digito = calculaDV(identcpf * 10 + primeiro_digito);
+
+    if( primeiro_digito != stringCPF.charAt(9) || segundo_digito != stringCPF.charAt(10) ){
+        alert("Digitos verificadores inválidos!");
+        document.getElementById("idTel").disabled = true;
+        return false;
+    }else{
+        document.getElementById("idTel").disabled = false;
+    }
+    
+return true;
+}
+
+</script>
+
+<body> 
+<div id="container">
+<header id="cabeçalho">
+<img id="logo" src="img/otakuontitan_topo.png" alt="Logotipo" title="Otaku Titan"/>
+<h1 class="otaku">Otaku on titan</h1>
+<nav id="menu">
+<ul>
+<li><a href="IndexV2.html" title="Inicial">Inicial</a></li> 
+<li><a href="destaquesV2.html" title="Destaques">Destaques</a></li>
+<li><a href="catalogoV2.html" title="Catálogo">Catálogo</a></li>
+<li><a href="comprasV2.html" title="Compras">Compras</a></li>
+</ul>
+</nav>
+</header> 
+
+<main class="destaques">
+<h2>Compras</h2> 
+</main>
+
+<section>
+<form method="POST" name="formulario" action="default.html" onsubmit="criticaCampoCPF(this);">
+
+<fieldset class="fsDados">
+<legend>Dados Pessoais</legend>
+
+<div class="divLinha">
+<label class="colPri" for="idnome">Nome: </label>
+<input type="text" required id="idnome" name="nome" class="inpGrande" />
+</div>
+<div class="divlinha">
+<label class="colPri" for="idendereco">Endereço: </label>
+<textarea  required class="inpGrande" id="idendereco" name="endereco">
+</textarea>
+</div>
+
+<div class="meiaLinEsq">
+<p class="meiaLinEsq">
+<label class="colPri" for="idcpf">CPF:</label>
+<input class="inpMedio" type="text" required id="idcpf" name="cpf" onChange= "criticaCampoCPF(this);"/>
+</p>
+<p class="meiaLinEsq">
+<label for="idTel" class="colPri">Telefone:</label>
+<input class="inpTelef" type="tel" required name="telefone" id="idTel" pattern="^\d{2}-\d{4}-\d{4}$" title="DDD-XXXX-XXXX" />
+</p>
+<p class="meiaLinEsq">
+<label for="idCel" class="colPri">Celular: </label>
+<input class="inpTelef" type="tel" required name="cel" id="idCel" pattern="^\d{2}-\d{5}-\d{4}$" title="DDD-9XXXX-XXXX"/>
+</p>
+</div>
+<fieldset class="fsDir">
+<legend>Nacimento:</legend> 
+<input class="numDD" type="number" name="DNasc"  min="1" max="31" /> / 
+<input class="numDD" type="number" name="MNasc"  min="1" max="12" /> / 
+<input class='numQD' type="number" name="ANasc" value="1900" min="1900" max="2020"/> 
+</fieldset>
+<fieldset class="fsDir">
+<legend>Genero:</legend>
+<label for="sexFem">
+<input type='radio' name="gen" value="fem" id="sexFem" />
+Fem</label>
+<label for="sexOutro">
+<input type="radio" name="gen" value="outro" id="sexOutro"/>
+Outro
+</label>
+<label for="sexMasc">
+<input type="radio" name="gen" value="masc" id="sexMasc" checked/>
+Masc
+</label>
+</fieldset>
+</fieldset>
+<fieldset class="fsDados">
+<legend>Seleção de Produtos e Pagamento</legend>
+<label for="idDropDown">Produtos: </label>
+<div class="divLinha">
+<select id="idDropDown" name="selecionado"> 
+<option>---------</option>    
+<optgroup label="Anime">
+    <option>Death Note - DVD - Completo</option>
+    <option>Naruto Shippuden T01 Box 01</option>
+    <option>Naruto Shippuden T01 Box 02</option>
+</optgroup>
+<optgroup label="Mangá">
+    <option>Naruto Gold - 55 Vol.</option>
+    <option>Attack on Titan - Vol 1-4</option>
+    <option>Attack on Titan - Vol 5-8</option>
+    <option>Naruto Box P01 Vol 1-27</option>
+</optgroup>
+<optgroup label="Action Figure">
+    <option>Naruto Shippuden - PVC</option>
+    <option>Ryuk - Death Note - PVC</option>
+</optgroup>
+</select>
+<input type="button" value="Comprar" name="comprar" onClick = "listaPedidosArea(selecionado,tablePrcProd)" id="idComprar" />
+</div>
+
+<div>
+<fieldset class="fsEsq">
+<legend>Dados do Cartão</legend> 
+
+<fieldset class="fsEsq">
+<legend>Bandeira:</legend>
+<div class="meiaLinEsq">
+    <label for="masterId">
+        <input type='radio' name="card" value="master" id="masterId" />
+        Master</label>
+        <label for="amexId">
+        <input type="radio" name="card" value="amex" id="amexId"/>
+        Amex
+        </label>
+        <label for="visaId">
+        <input type="radio" name="card" value="visa" id="visaId" checked/>
+        Visa
+        </label>
+</div>    
+</fieldset>
+
+<div class="meiaLinDir">
+<p>
+<label class="colPri">Validade:</label> 
+<input class="numDD" type="number" name="mValid"  min="1" max="31" required/> / 
+<input class="numQD" type="number" name="aValid"  min="1" max="12" required/>  
+</p>
+</div>
+<div class="meiaLinEsq">
+<p>
+<label class="colPri" for="idcartao">Numero:</label>
+<input required type="text" id="idcartao" name="numCartao" class="inpMedio" />
+</p>
+</div>
+</div>
+
+<div>
+    <textarea class="fsDir2" name="listaPedidos" readonly cols="10" rows="10">
+    </textarea>
+    </div>
+    <div class="fsDir">
+        <p>
+        <label class="colPri">Valor: R$</label>
+        <input  type="text" name="valor" readonly  value = "00,00" class="inpMedio" />
+        </p>
+        </div>
+    </fieldset>
+</fieldset>
+<div class="botoes">
+<input  type="submit" value="Enviar" onClick = ""/>
+<input  type="reset"  value="Limpar" /> 
+</div>
+</form>
+</section>
+
+<footer id="rodape">
+<address class="footer"> Avenida Akihabara, 123/Tel: (21)91234-5678 / <a href="mailto:contato@manganime.com.br">contato@manganime.com.br</a>
+</address>
+</footer>
+
+</div>
+</body>
+</html>     
+

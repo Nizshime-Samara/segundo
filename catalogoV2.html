@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+<Head>
+<meta charset="UTF-8">
+<title>Otaku sua lojinha anime</title>
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
+    <link rel="stylesheet" type="text/css" href="estilo-teste.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>  
+    <script src="modernizr.js"></script> 
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description+" content="A Sua Loja Otaku/Catálogo"/>
+    <meta name="author" content="Nizshime Scorzello" />
+    </head>
+
+    <script lang="javascript" type="text/javascript">
+var tabProdutos = ["NarShipB1T01A80", "NarShipB2T01A80", "AOT1-4A80", "AOT5-8A80","NarutoBoxPart1A80","RyukFigA80"]; 
+var tabPrecos   = [60, 60, 130, 130, 600, 250]; 
+
+function Mostra(ind) { 
+var foto = document.getElementById("imgProdutoImg");    
+var prec = document.getElementById("prcProduto");     
+foto.src = "img/" + tabProdutos[ind] + ".jpg";    
+prec.innerHTML = "R$ " + tabPrecos[ind] + ",00"; } 
+
+
+    </script>
+
+<body> 
+    <div id="container">
+    <header id="cabeçalho">
+        <img id="logo" src="img/otakuontitan_topo.png" alt="Logotipo" title="Otaku Titan">
+        <h1 class="otaku">Otaku on titan</h1>
+        <nav id="menu">
+            <ul>
+                <li><a href="indexV2.html" title="Inicial">Inicial</a></li> 
+                <li><a href="destaquesV2.html" title="Destaques">Destaques</a></li>
+                <li><a href="catalogoV2.html" title="Catálogo">Catálogo</a></li>
+                <li><a href="comprasV2.html" title="Compras">Compras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="destaques">
+<h2>Catálogo</h2> 
+</main>
+<section>
+    <table class="tabInfo"> 
+
+    <tr>
+    <th colspan="4" class="linTH"> Itens em Mais Procurados</th>
+    </tr> 
+    <tr>
+    <th class="linTH">Categoria</th>     
+    <th class="linTH">Produto</th> 
+    <th class="linTH">Descrição</th>    
+    <th class="linTH">Foto/Preço</th>     
+
+    <tr>
+    <th class="colTH"rowspan="2">Anime</th>
+    <th class="colTH" rowspan="2">Naruto Shippuden</th>
+    <td class="colTH"><a target="_self"  href="javascript:Mostra(0);">Temporada 1 Box 1</a></td>
+    <td rowspan="6"><div><img id="imgProdutoImg"src='img/vazio.jpg'/></div><div id="prcProduto"></div></td> 
+    </tr>
+
+    <tr>
+    <td class="colTH"><a target="_self" href="javascript:Mostra(1);">Temporada 1 Box 2</a></td>
+    </tr> 
+
+    <tr> 
+    <th rowspan="3" class="colTH"> Mangá</th>
+    <th class="colTH" rowspan="2">Attack on Titan</th>     
+    <td class="colTH"><a target="_self"  href="javascript:Mostra(2);">Volumes 1-4</a></td>
+    </tr>
+    <tr>
+    <td class="colTH"><a target="_self" href="javascript:Mostra(3);">Volumes 5-8</a></td>
+    </tr>
+    <tr>
+    <th class="colTH">Naruto</th>
+    <td class="colTH"><a target="_self" href="javascript:Mostra(4);">Box Parte 1 - Vol 1 - 27 - Inglês</a></td>
+    </tr>
+
+
+    <tr><th class="colTH">Colecionáveis</th>
+    <th class="colTH">Death Note</th> 
+    <td class="colTH">
+    <a target="_self" href="javascript:Mostra(5);">Ryouk em PVC</a></td>
+    </tr>
+</table>
+
+<br>
+</section>
+<footer id="rodape">
+    <address class="footer"> Avenida Akihabara, 123/Tel: (21)91234-5678 / <a href="mailto:contato@manganime.com.br">contato@manganime.com.br</a>
+    </address>
+    </footer>
+    </div>
+    </body>
+</html>

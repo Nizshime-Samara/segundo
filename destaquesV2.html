@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <title>Otaku sua lojinha anime</title>
+        <link rel="stylesheet" type="text/css" href="estilo-teste.css"/>
+        <link rel="stylesheet" type="text/css" href="reset.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>  
+        <script src="modernizr.js"></script> 
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="description+" content="A Sua Loja Otaku/Catálogo"/>
+        <meta name="author" content="Nizshime Scorzello" />
+        </head>
+
+        <script language = "javascript" type="text/javascript">
+    function criarPopUpDeathNote(){
+        titulo = "<h1>Death Note</h1>"
+        texto1 = "Serie Completa"
+        texto2 = "DVD - 5 discos"
+        texto3 = "Preço de: R$ "
+        texto4 = " Por : R$ "
+        textoPreco = " 90,00 "
+        textoNovoPreco=" 85,00 "
+        newWindow = window.open('','Página Destaques', "resizable= yes, width=350, height=450");
+        newWindow.document.write(titulo.fontcolor('blue').fontsize(2).bold()+" </br> <img src='img/DeathNoteA110.jpg' width='150' height='150'> </br>")
+        newWindow.document.write(texto1.fontcolor('blue').bold().fontsize(4) +" </br>"+texto2.fontcolor('blue').bold().fontsize(4) +" </br>")
+        newWindow.document.write(texto3.fontcolor('blue').bold().fontsize(4)+textoPreco.strike().fontcolor('blue').bold().fontsize(4)+"</br>")
+        newWindow.document.write(texto4.fontcolor('blue').bold().fontsize(4)+textoNovoPreco.fontcolor('red').bold().fontsize(4)+"</br> </br>")
+        newWindow.document.write("<input type = button onclick='javascript:window.close()'value = 'Fechar'/> ")
+    }
+
+    function criarPopUpNarutoGold(){
+        titulo = "<h1>Naruto Gold</h1>"
+        texto1 = "Mangá em Português"
+        texto2 = "55 volumes"
+        texto3 = "Preço de: R$ "
+        texto4 = " Por : R$ "
+        textoPreco = " 1100,00 "
+        textoNovoPreco=" 1000,00 "
+        newWindow = window.open('','Página Destaques', "resizable= yes, width=350, height=450");
+        newWindow.document.write(titulo.fontcolor('blue').fontsize(2).bold()+"<br/> <img src='img/NarutoGoldA110.jpg' width='150' height='150'> </br>")
+        newWindow.document.write(texto1.fontcolor('blue').bold().fontsize(4) +" </br>"+texto2.fontcolor('blue').bold().fontsize(4) +" </br>")
+        newWindow.document.write(texto3.fontcolor('blue').bold().fontsize(4)+textoPreco.strike().fontcolor('blue').bold().fontsize(4)+"</br>")
+        newWindow.document.write(texto4.fontcolor('blue').bold().fontsize(4)+textoNovoPreco.fontcolor('red').bold().fontsize(4)+"</br> </br>")
+        newWindow.document.write("<input type = button onclick='javascript:window.close()'value = 'Fechar'/> ")
+    }
+
+    function criarPopUpTerceiro(){
+        titulo = "<h1>Figure Action Naruto</h1>"
+        texto1 = "Action figure em PVC"
+        texto3 = "Preço de: R$ "
+        texto4 = " Por : R$ "
+        textoPreco = " 250,00 "
+        textoNovoPreco=" 210,00 "
+
+        newWindow = window.open('','Página Destaques', "resizable= yes, width=350, height=450");
+        newWindow.document.write(titulo.fontcolor('blue').fontsize(2).bold()+"<br/> <img src='img/NarutoFigA110.jpg' width='150' height='150'></br>")
+        newWindow.document.write(texto1.fontcolor('blue').bold().fontsize(4) +"</br>")
+        newWindow.document.write(texto3.fontcolor('blue').bold().fontsize(4)+textoPreco.strike().fontcolor('blue').bold().fontsize(4)+"</br>")
+        newWindow.document.write(texto4.fontcolor('blue').bold().fontsize(4)+textoNovoPreco.fontcolor('red').bold().fontsize(4)+"</br> </br>")
+        newWindow.document.write("<input type = button onclick='javascript:window.close()'value = 'Fechar'/> ")
+    }
+
+
+        </script>
+
+
+<body> 
+        <div id="container">
+        <header id="cabeçalho">
+            <img id="logo" src="img/otakuontitan_topo.png" alt="Logotipo" title="Otaku Titan">
+            <h1 class="otaku">Otaku on titan</h1>
+            <nav id="menu">
+                <ul>
+                    <li><a href="IndexV2.html" title="Inicial">Inicial</a></li> 
+                    <li><a href="destaquesV2.html" title="Destaques">Destaques</a></li>
+                    <li><a href="catalogoV2.html" title="Catálogo">Catálogo</a></li>
+                    <li><a href="comprasV2.html" title="Compras">Compras</a></li>
+                </ul>
+            </nav>
+        </header> 
+    
+    <main class="destaques">
+        <h2>Destaques / Promoções</h2> 
+    </main>
+    <section class="listas">
+<ol class="lisDestaq">
+            <li class="produtos1"> <a href="javascript:criarPopUpDeathNote()" >Death Note</a>     <!-- Veja que a tag de fechamento </li> não é colocada aqui! -->
+            </li>
+
+        
+        
+        <li class="produtos2"><a href="javascript:criarPopUpNarutoGold()">Naruto Gold</a>
+        </li>
+        
+
+        <li class="produtos3"><a href="javascript:criarPopUpTerceiro()">Figure Action Naruto</a>      <!-- Veja que a tag de fechamento </li> não é colocada aqui! -->
+    </li>
+</ol>
+            
+
+    </section>
+    <footer id="rodape">
+        <address class="footer"> Avenida Akihabara, 123/Tel: (21)91234-5678 / <a href="mailto:contato@manganime.com.br">contato@manganime.com.br</a>
+        </address>
+        </footer>
+        </div>
+        </body>
+    </Html>

@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+background-color:#FFFFFF !important;
+}
+
+#container{
+width: 800px;
+height: 850px;
+background-color:#FFFFFF;
+margin: -20px auto 0px auto;
+padding: 10px;
+}
+
+header#cabeçalho{
+display: block;
+text-align: center;
+width: auto;
+height: 120px;
+padding-top: 20px;
+padding-bottom: 4px;
+margin-bottom: 4px;
+}
+
+.nav{
+    display: block;
+    padding: 0px, 4px, 0px, 4px;
+}
+
+main{
+font-family: 'Muli', sans-serif;
+font-size: 18px;
+padding: 10px;
+margin:5px;
+}
+
+#logo{
+display: block;
+width: 400px;
+padding-bottom: 4px;
+margin-bottom: 4px;
+margin-left: 200px;
+margin-right: 200px; 
+}
+
+/*Home*/
+.otaku{
+display: none;
+text-align: left;
+color: #BB0D0D;
+}
+
+section#otaku_sobre{
+display:block;    
+padding: 10px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+color: #BB0D0D;
+font-family: 'Muli';
+font-size: 18px; 
+}
+
+/*Formatação do imagens Home*/
+
+figure.foto-legenda img{
+width:30%;
+height:30%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+padding: 20px;
+}
+figure.foto-legenda figcaption{
+background-position-x: center;    
+opacity: 0;
+margin: 1px;
+padding: 2px;
+text-align: center;
+color: rgb(102, 174, 233);
+transition: opacity 0.8s;
+font-size: 10px;
+}
+
+figure.foto-legenda:hover figcaption{
+opacity: 5;
+}
+
+/*Formatação/estilização do  menu */
+
+nav#menu{
+display: block;
+position: relative;
+width: auto;
+text-align: center;
+font-size: 18px;
+font-family: 'Muli';
+padding: 10px;
+padding: bottom 10px;
+}
+
+nav#menu ul{
+list-style: none; /* tira a formatação de lista*/
+position: relative;
+width: auto;
+left: auto;
+right:auto;
+border-bottom: solid 2px;
+border-color: #BB0D0D;
+padding: auto;
+margin: auto;
+
+}
+nav#menu li{
+display:inline-block;/*coloca as opções de menu em uma linha*/    
+font-size: 18px;
+font-family: 'Muli' sans-serif;
+margin: auto; 
+padding: auto;
+margin:auto;
+padding-right: 20px;
+padding-left: 20px;
+}
+nav#menu a:link{
+color:#DD0000;
+text-decoration: none;
+}
+nav#menu a:visited{
+color: #CC0000;
+}
+
+/* confguração footer */
+
+footer#rodape{
+clear:both;
+font-family: 'Ubuntu';
+font-weight:bolder; /*aumenta o peso da fonte (w3c)*/
+}
+.footer{
+display: block;    
+text-align: center;
+font-size: 14px;
+font-family: 'Tahoma' bold;
+font-weight:bolder;
+border-top:solid 2px;
+border-color: #BB0D0D;
+padding-top: 10px;
+}
+
+footer#rodape a:link{
+color:#FF0000;  
+text-decoration: none;
+}
+
+footer#rodape a:visited{
+color: #EE0000;
+}
+
+ /* estilo destaques/promoções */
+
+.lisDestaq{
+list-style-type:Katakana;
+font-family: 'Muli';
+color: #2255AA;
+font-size: 18px;
+font-weight:bolder; 
+padding-top: 10px;
+padding-bottom: 20px;
+width: auto;
+} 
+
+.itemDesProd{
+list-style-type: square;
+}
+
+.produtos1{
+width: 200px;
+height: 50px;
+padding: 10px;
+float:left;
+}
+
+.produtos2{
+width: 200px;
+height: 50px;
+padding: 10px;
+float:left;
+clear: left;
+}
+
+.produtos3{
+width: 200px;
+height: 50px;
+padding: 10px;
+float:left;
+clear: left;
+}
+/*
+.precoVelho{
+text-decoration-line: line-through;
+} */
+/*
+.preco{
+color: #FF0000;
+} */
+
+/*main{
+font-family: 'tahoma' sans-serif;
+color: #BB0D0D;
+font-weight: bolder;
+font-size: large;
+margin: 10px;
+} */
+
+/*estilo imagens destaques/promoções*/
+/* li.foto_death{
+height: 125px;
+float:right;
+clear:right;
+list-style: none;
+} */
+
+/*li.foto_gold{
+float: right;
+clear: right;
+height: 125px;
+list-style: none;
+} */
+
+/* li.foto_naruto{
+float: right;
+clear: right;
+height: 125px;
+list-style: none;
+} */
+
+
+/*estilo table catalogo*/
+.tabinfo{
+margin-top: 10px;
+margin-left: auto;
+margin-right: auto;
+border: solid black;
+border-collapse: collapse;
+background-color: #FFFFCC;
+font-family: Arial, "Ubuntu";
+color:#2255AA;
+}
+td,th,tr{
+border: solid 2px #000000;
+}
+.linTH{
+color:#FFFFFF;
+background-color: #0077BB;
+vertical-align: middle;
+text-align: center;
+padding: 6px 6px 6px 6px;
+margin: 6px 6px 6px 6px;
+vertical-align: middle;
+font-size: 19px;
+}
+.colTH{
+color: #005599;
+background-color: #FFCC77;
+text-align: left;
+padding: 6px 6px 6px 6px;
+margin: 6px 6px 6px 6px;
+vertical-align: middle;
+font-size: 19px;
+}
+
+.imgVazio{
+padding: 2px,2px,2px,2px;
+vertical-align: middle;
+background-color: #FFFFFF;
+}
+
+/*.imgNaruto{
+background-image: url(img/NarutoBoxPart1A80.jpg) no-repeat;
+vertical-align: middle;
+padding: 2px,2px,2px,2px;
+background-color: #FFFFFF;
+}
+.imgRyuk{
+    background-image: url(img/RyukFigA80.jpg) no-repeat;
+    vertical-align: middle;
+    background-color: #FFFFFF;
+}
+.boxNaruto{
+background-image:url(img/NarShipB1T01A80.jpg) no-repeat;
+vertical-align: middle;
+background-color: #FFFFFF;
+}
+.boxAttack{
+background-image: url(img/AOT1-4A80.jpg) no-repeat;
+vertical-align: middle;
+margin: auto;
+background-color: #FFFFFF;
+}*/
+tr{
+    vertical-align: middle;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+.descricao{
+    vertical-align: middle;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    font-size: 20px;
+}
+#prcProduto{
+color: #CC0000;
+font-weight: bold;
+font-size: 25px;
+vertical-align: middle ;
+margin: 5px;
+padding: 10px;
+}
+#imgProdutoImg{
+margin: 20px;
+padding: 12px;
+border: #226699 solid 3px;
+background-color: #FFFFCC;
+height: 180px;
+width: 180px;
+}
+.produto{
+vertical-align: middle;
+margin: 10px;
+padding: 5px;
+text-align: center;
+}
+/* Configuração rodapé*/
+.footer{
+background-color:#FFFFFF ;
+color:#BB0D0D;
+padding: 20px;
+text-align:center;
+}
+.footer a{
+color: #DD0000;
+text-decoration: underline;
+}
+footer a:hover{
+color : #CC0000;
+}
+
+/* formulário*/
+fieldset{
+color: #2255AA;
+background-color: #FFFFCC;
+margin: 20px 10px 0px 10px;
+}
+
+.fsDados{
+width: 510px;
+margin-bottom: 5px;
+}
+
+.fsEsq{
+float: left;
+margin: 0px 0px 6px 0px;
+}
+
+.fsDir{
+float: right;
+width: 220px;
+margin: 0px 0px 6px 0px;
+clear: right;
+}
+.fsDir2{      /* posicionamento textarea ao lado de dados do cartão */
+    float: right;
+    width: 200px;
+    margin: 0px 0px 6px 0px;
+    clear: right;
+    }
+
+.meiaLinDir{
+width: 220px;
+margin-right:0px 0px 6px 0px;
+}
+
+.meiaLinEsq{
+width: 220px;
+padding: 5px;
+margin-left: 6px 5px 18px 0px;
+float: left;
+margin: center;
+}
+
+.divLinha{
+width: 490px;
+margin-bottom: 18px;
+display: block;
+}
+
+.elemDir{
+display: block;
+float: right;
+clear: right;
+}
+
+.elemEsq{
+display: block;
+float: left;
+clear: left;
+}
+
+.colPri{
+float: left;
+display: block;
+width: 84px;
+clear: left;
+margin: 5px;
+}
+
+.inpGrande{
+width: 390px;
+}
+
+.inpMedio{
+width: 120px;
+}
+
+.inpTelef{
+width: 120px;
+}
+
+.numDD{
+width: 40px;
+}
+
+.numQD{
+width: 60px;
+}
+
+.botoes{
+display: inline-block;
+text-align: left;
+margin:12px 10px 12px 10px ;
+}
